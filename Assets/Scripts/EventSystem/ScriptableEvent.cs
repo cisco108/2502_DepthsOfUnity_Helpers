@@ -53,8 +53,10 @@ public class ScriptableEvent : UnityEngine.ScriptableObject, IEvent
         return instance;
     }
 
+    [Button("Yoo")]
     public void Invoke()
     {
+        Debug.Log($"Invoked from {this}");
         foreach (var listener in Listeners)
         {
             listener.OnInvoke();

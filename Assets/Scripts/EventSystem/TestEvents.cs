@@ -1,17 +1,28 @@
 ﻿using System;
 using UnityEngine;
 
-namespace EventSystem
+public class TestEvents : MonoBehaviour
 {
-    public class TestEvents : MonoBehaviour
+    public ScriptableEvent myEvent;
+
+    // [Button("Invoke")]
+    public void Invoke()
     {
-        public ScriptableEvent myEvent;
-        private void Update()
+        Debug.Log($"Sers");
+    }
+
+    [InfoBox("foo")]
+    void Foo()
+    {
+        Debug.Log($"{this} foo");
+    }
+
+    // [Button("Hello New York")]
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-               myEvent.Invoke(); 
-            }
+            myEvent.Invoke();
         }
     }
 }

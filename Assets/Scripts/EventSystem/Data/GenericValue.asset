@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106b6fab46ed44e194b95b027b308f0e, type: 3}
   m_Name: GenericValue
   m_EditorClassIdentifier: 
-  valueType: 0
-  boolVal: 0
+  valueType: 1
+  boolVal: 1
   intVal: 0

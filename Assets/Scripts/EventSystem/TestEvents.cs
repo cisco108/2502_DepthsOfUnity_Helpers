@@ -17,7 +17,7 @@ public class TestEvents : MonoBehaviour
         Debug.Log($"{this} foo");
     }
 
-    // [Button("Hello New York")]
+     [Button("Hello New York")]
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))

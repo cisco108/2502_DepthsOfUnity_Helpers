@@ -20,11 +20,14 @@ public class ExampleUsage : MonoBehaviour
     public void TestLoggingToFile()
     {
         //To temp.txt
-        "Hello file writer!".WriteToFile();
-        42.WriteToFile();
-        gameObject.name.WriteToFile();
+        "Hello file writer!".WriteToTempFile();
+        42.WriteToTempFile();
+        gameObject.name.WriteToTempFile();
     }
 
+  
+
+    [InfoBox("With this Example Class you can try all the Unity Extension methods.")]
     [Button("Save GameObject[] to Dictionary")]
     private void TestArrayToDict()
     {

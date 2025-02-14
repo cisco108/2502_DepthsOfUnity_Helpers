@@ -32,21 +32,24 @@ public static class ExtensionMethods
         Debug.Log(o);
     }
 
-    public static void WriteToFile(this object o)
+    public static void WriteToTempFile(this object o)
     {
         var path = Path.Combine(Directory.GetCurrentDirectory(), "temp.txt");
         File.AppendAllLines(path, new[] { o.ToString() });
         Debug.Log($"Wrote content to: {path}");
     }
 
+
     public static Dictionary<string, GameObject> ArrayToDict(this GameObject[] arr)
     {
         Dictionary<string, GameObject> dictionary = new();
         foreach (var gO in arr)
         {
-           dictionary.Add(gO.name, gO); 
+            dictionary.Add(gO.name, gO);
         }
 
         return dictionary;
     }
+
+   
 }

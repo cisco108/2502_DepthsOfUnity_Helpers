@@ -38,8 +38,8 @@ public class InfoDrawer : Editor
             var attributes = methodInfo.GetCustomAttributes(typeof(InfoBoxAttribute), true);
             if (attributes.Length > 0)
             {
-                GUILayout.Box(new GUIContent("Hello Mister good to see you in this Box! \n \n ", tex ));
-                // GUILayout.Box(new GUIContent("Hello Mister good to see you in this Box! \n \n ", new Texture2D(100, 100)));
+                var infoBoxAttribute = attributes[0] as InfoBoxAttribute;
+                GUILayout.Box(new GUIContent(infoBoxAttribute.Info, tex));
             }
         }
     }

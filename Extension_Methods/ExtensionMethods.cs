@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.Networking;
 
 public static class ExtensionMethods
 {
@@ -25,6 +26,23 @@ public static class ExtensionMethods
         transform.LookAt(targetPosition);
         Vector3 eulerAngles = transform.eulerAngles;
         transform.eulerAngles = new Vector3(0, eulerAngles.y, 0);
+    }
+
+    public static void PrintJoke(this GameObject gameObject)
+    {
+        string url = "https://api.chucknorris.io/jokes/random";
+        var webRequest = UnityWebRequest.Get(url);
+        var request = webRequest.SendWebRequest();
+        Debug.Log(request);
+        
+        while (!request.isDone)
+        {
+            System.Threading.Thread.Sleep(100);
+        }
+
+        var json = webRequest.downloadHandler.text;
+        var data = JsonUtility.FromJson<Response>(json);
+        Debug.Log($"{gameObject.name} has a joke to tell: {data.value}");
     }
 
     public static void Log(this object o)

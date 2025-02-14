@@ -2,9 +2,9 @@
 using UnityEditor;
 
 [InitializeOnLoad]
-public class HierarchyIcon
+public class HierarchyButton
 {
-    static HierarchyIcon()
+    static HierarchyButton()
     {
         EditorApplication.hierarchyWindowItemOnGUI += OnHierarchyGUI;
     }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using System.IO;
 
 public static class ExtensionMethods
@@ -35,5 +36,17 @@ public static class ExtensionMethods
     {
         var path = Path.Combine(Directory.GetCurrentDirectory(), "temp.txt");
         File.AppendAllLines(path, new[] { o.ToString() });
+        Debug.Log($"Wrote content to: {path}");
+    }
+
+    public static Dictionary<string, GameObject> ArrayToDict(this GameObject[] arr)
+    {
+        Dictionary<string, GameObject> dictionary = new();
+        foreach (var gO in arr)
+        {
+           dictionary.Add(gO.name, gO); 
+        }
+
+        return dictionary;
     }
 }

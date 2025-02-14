@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 
-public class ExampleUsage : AutoInitPrivateComponentFields
+public class ExampleUsage : MonoBehaviour
 {
-    private MeshRenderer _renderer;
 
+    public GameObject[] gameObjects;
     private void Start()
     {
       TestLoggingExtensions(); 
+      TestArrayToDict();
        
     }
 
@@ -24,5 +25,17 @@ public class ExampleUsage : AutoInitPrivateComponentFields
        "Hello file writer!".WriteToFile();
        42.WriteToFile();
        gameObject.name.WriteToFile();
+    }
+
+    private void TestArrayToDict()
+    {
+        var newDict = gameObjects.ArrayToDict();
+        foreach (var o in newDict)
+        {
+            Debug.Log(o.Key + "\n" + o.Value);
+        }
+
+        GameObject markObject = newDict["momo"];
+        markObject.SetActive(false);
     }
 }

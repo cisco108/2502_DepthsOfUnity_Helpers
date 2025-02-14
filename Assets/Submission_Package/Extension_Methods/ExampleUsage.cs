@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ExampleUsage : MonoBehaviour
 {
     public GameObject[] gameObjects;
-    
+
     [Button("Log to Console")]
     private void TestLoggingToConsole()
     {
@@ -25,7 +26,6 @@ public class ExampleUsage : MonoBehaviour
         gameObject.name.WriteToTempFile();
     }
 
-  
 
     [InfoBox(" With this Example Class you can try all the \n" +
              " Unity Extension methods, included in the Package.")]
@@ -40,5 +40,13 @@ public class ExampleUsage : MonoBehaviour
 
         GameObject markObject = newDict["momo"];
         markObject.SetActive(false);
+    }
+
+    public GameObject jokeMaster;
+
+    [Button("Ask the Joke Master")]
+    private void TestJokeExtension()
+    {
+        jokeMaster.PrintJoke();
     }
 }

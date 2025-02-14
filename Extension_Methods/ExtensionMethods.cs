@@ -5,14 +5,6 @@ using UnityEngine.Networking;
 
 public static class ExtensionMethods
 {
-    public static T GetOrAddComponent<T>(this GameObject gameObject) where T : MonoBehaviour
-    {
-        var component = gameObject.GetComponent<T>();
-        if (component == null) gameObject.AddComponent<T>();
-        return component;
-    }
-
-
     public static void LogInfo(this GameObject gO)
     {
         Debug.Log($"Name: {gO.name} \n" +
@@ -33,7 +25,6 @@ public static class ExtensionMethods
         string url = "https://api.chucknorris.io/jokes/random";
         var webRequest = UnityWebRequest.Get(url);
         var request = webRequest.SendWebRequest();
-        Debug.Log(request);
         
         while (!request.isDone)
         {
@@ -42,7 +33,7 @@ public static class ExtensionMethods
 
         var json = webRequest.downloadHandler.text;
         var data = JsonUtility.FromJson<Response>(json);
-        Debug.Log($"{gameObject.name} has a joke to tell: {data.value}");
+        Debug.Log($"The {gameObject.name} has a joke to tell: {data.value}");
     }
 
     public static void Log(this object o)
@@ -68,6 +59,15 @@ public static class ExtensionMethods
 
         return dictionary;
     }
+    
+    
+    /////////////////// From the Lectures /////////////////////////////////////
 
+    public static T GetOrAddComponent<T>(this GameObject gameObject) where T : MonoBehaviour
+    {
+        var component = gameObject.GetComponent<T>();
+        if (!component) gameObject.AddComponent<T>();
+        return component;
+    }
    
 }

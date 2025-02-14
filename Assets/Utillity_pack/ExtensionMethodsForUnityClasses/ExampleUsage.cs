@@ -4,7 +4,7 @@ public class ExampleUsage : MonoBehaviour
 {
     public GameObject[] gameObjects;
     
-    [Button("Log to Temp File")]
+    [Button("Log to Console")]
     private void TestLoggingToConsole()
     {
         //To Unity Console
@@ -16,7 +16,7 @@ public class ExampleUsage : MonoBehaviour
         gameObject.Log();
     }
 
-    [Button("Log to Console")]
+    [Button("Log to Temp File")]
     public void TestLoggingToFile()
     {
         //To temp.txt

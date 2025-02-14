@@ -29,3 +29,9 @@ Extension_Tester
 Hello file writer!
 42
 Extension_Tester
+Hello file writer!
+42
+Extension_Tester
+Hello file writer!
+42
+Extension_Tester

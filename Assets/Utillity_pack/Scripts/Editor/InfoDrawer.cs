@@ -18,6 +18,13 @@ public class InfoDrawer : Editor
         {
             DrawInfoBox(target);
         }
+        
+        
+        var mono = target as MonoBehaviour;
+        if (mono)
+        {
+            DrawButton(mono);
+        }
     }
 
     private void DrawInfoBox(Object o)

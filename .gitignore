@@ -1,5 +1,7 @@
 # Extended version of: https://github.com/github/gitignore/blob/master/Unity.gitignore
 
+temp.txt
+
 # Unity
 [Ll]ibrary/
 [Tt]emp/

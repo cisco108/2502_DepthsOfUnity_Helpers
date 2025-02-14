@@ -8,7 +8,6 @@ public class AudioComponent : MonoBehaviour
 
     public void PlaySoundDelayedFromButton()
     {
-        // StartCoroutine(PlayAfterSeconds());
         Invoke(nameof(PlayDelayed), secondsDelay);
     }
     public void PlaySoundDelayedFromToggle(bool toggleVal)
@@ -19,7 +18,6 @@ public class AudioComponent : MonoBehaviour
             return;
         }
 
-        // StartCoroutine(PlayAfterSeconds());
         Invoke(nameof(PlayDelayed), secondsDelay);
     }
 
@@ -28,16 +26,4 @@ public class AudioComponent : MonoBehaviour
         AudioManager.Instance.ImpulseSound(soundClip, soundLocation);
     }
 
-    /*
-    private IEnumerator PlayAfterSeconds()
-    {
-        float time = 0;
-        while (time < secondsDelay)
-        {
-            time += Time.deltaTime;
-            yield return null;
-        }
-
-        AudioManager.Instance.ImpulseSound(soundClip, soundLocation);
-    }*/
 }

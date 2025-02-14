@@ -1024,7 +1024,7 @@ MonoBehaviour:
   - {fileID: 1665184949}
   - {fileID: 1541561969}
   - {fileID: 851257368}
-  jokeMaster: {fileID: 0}
+  jokeMaster: {fileID: 492760230}
 --- !u!4 &1638202833
 Transform:
   m_ObjectHideFlags: 0

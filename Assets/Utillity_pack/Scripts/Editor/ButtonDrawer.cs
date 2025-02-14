@@ -10,11 +10,11 @@ public class ButtonDrawer : Editor
     {
         DrawDefaultInspector();
 
-        /*var tempSgui = target as TempSGUI;
-        if (tempSgui)
+        var mono = target as MonoBehaviour;
+        if (mono)
         {
-            DrawButton(tempSgui);
-        }*/
+            DrawButton(mono);
+        }
     }
 
     void DrawButton(Object o)

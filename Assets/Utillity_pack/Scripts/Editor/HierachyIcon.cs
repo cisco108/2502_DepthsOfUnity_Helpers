@@ -6,7 +6,7 @@ public class HierarchyIcon
 {
     static HierarchyIcon()
     {
-        // EditorApplication.hierarchyWindowItemOnGUI += OnHierarchyGUI;
+        EditorApplication.hierarchyWindowItemOnGUI += OnHierarchyGUI;
     }
 
     static void OnHierarchyGUI(int instanceID, Rect selectionRect)

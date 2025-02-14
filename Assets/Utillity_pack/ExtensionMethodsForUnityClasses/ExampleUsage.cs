@@ -2,31 +2,30 @@
 
 public class ExampleUsage : MonoBehaviour
 {
-
     public GameObject[] gameObjects;
-    private void Start()
-    {
-      TestLoggingExtensions(); 
-      TestArrayToDict();
-       
-    }
-
-    private void TestLoggingExtensions()
+    
+    [Button("Log to Temp File")]
+    private void TestLoggingToConsole()
     {
         //To Unity Console
-       gameObject.LogInfo(); 
-       
-       "hello".Log();
-       1.Log();
-       42.0.Log();
-       gameObject.Log();
-        
-       //To temp.txt
-       "Hello file writer!".WriteToFile();
-       42.WriteToFile();
-       gameObject.name.WriteToFile();
+        gameObject.LogInfo();
+
+        "hello".Log();
+        1.Log();
+        42.0.Log();
+        gameObject.Log();
     }
 
+    [Button("Log to Console")]
+    public void TestLoggingToFile()
+    {
+        //To temp.txt
+        "Hello file writer!".WriteToFile();
+        42.WriteToFile();
+        gameObject.name.WriteToFile();
+    }
+
+    [Button("Save GameObject[] to Dictionary")]
     private void TestArrayToDict()
     {
         var newDict = gameObjects.ArrayToDict();

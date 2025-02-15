@@ -49,4 +49,22 @@ public class ExampleUsage : MonoBehaviour
     {
         jokeMaster.PrintJoke();
     }
+
+
+    public GameObject testLookAtCamera;
+
+    [Button("Look at Camera")]
+    private void TestLookAtCamera()
+    {
+       testLookAtCamera.transform.LookAtCamera(); 
+    }
+    [Button("Reset Rotation")]
+    private void TestResetRotation()
+    {
+       testLookAtCamera.transform.ResetRotation(); 
+    }
+
+
+
+
 }

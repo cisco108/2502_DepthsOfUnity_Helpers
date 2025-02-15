@@ -47,4 +47,12 @@ public class ObjectPool
         _pooledObjects.Add(GameObject.Instantiate(_prefab));
         return _pooledObjects.Last();
     }
+
+    public void ClearPool()
+    {
+        foreach (var o in _pooledObjects)
+        {
+           GameObject.DestroyImmediate(o); 
+        }
+    }
 }

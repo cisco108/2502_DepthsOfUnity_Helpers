@@ -5,6 +5,25 @@ using UnityEngine.Networking;
 
 public static class ExtensionMethods
 {
+    public static Dictionary<string, GameObject> ArrayToDict(this GameObject[] arr)
+    {
+        Dictionary<string, GameObject> dictionary = new();
+        foreach (var gO in arr)
+        {
+            dictionary.Add(gO.name, gO);
+        }
+
+        return dictionary;
+    }
+
+    public static void LookAtCamera(this Transform transform)
+    {
+       transform.LookAt(Camera.main.transform); 
+    }
+    public static void ResetRotation(this Transform transform)
+    {
+        transform.rotation = Quaternion.identity;
+    }
     public static void LogInfo(this GameObject gO)
     {
         Debug.Log($"Name: {gO.name} \n" +
@@ -25,7 +44,7 @@ public static class ExtensionMethods
         string url = "https://api.chucknorris.io/jokes/random";
         var webRequest = UnityWebRequest.Get(url);
         var request = webRequest.SendWebRequest();
-        
+
         while (!request.isDone)
         {
             System.Threading.Thread.Sleep(100);
@@ -49,18 +68,6 @@ public static class ExtensionMethods
     }
 
 
-    public static Dictionary<string, GameObject> ArrayToDict(this GameObject[] arr)
-    {
-        Dictionary<string, GameObject> dictionary = new();
-        foreach (var gO in arr)
-        {
-            dictionary.Add(gO.name, gO);
-        }
-
-        return dictionary;
-    }
-    
-    
     /////////////////// From the Lectures /////////////////////////////////////
 
     public static T GetOrAddComponent<T>(this GameObject gameObject) where T : MonoBehaviour
@@ -69,5 +76,4 @@ public static class ExtensionMethods
         if (!component) gameObject.AddComponent<T>();
         return component;
     }
-   
 }

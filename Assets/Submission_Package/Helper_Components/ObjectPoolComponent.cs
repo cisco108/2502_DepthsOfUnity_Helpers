@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class ObectPoolComponent : MonoBehaviour
+public class ObjectPoolComponent : MonoBehaviour
 {
     [SerializeField] private bool createOnStart;
-    [SerializeField] private int amount;
+    [SerializeField] private int poolSize;
     [SerializeField] private GameObject objectToPool;
     [SerializeField] private Transform spawnLocation;
     private ObjectPool pool;
@@ -26,7 +26,7 @@ public class ObectPoolComponent : MonoBehaviour
         {
             pool.ClearPool();
         }
-        pool = new ObjectPool(objectToPool, amount);
+        pool = new ObjectPool(objectToPool, poolSize);
     }
 
     [Button("Spawn Object")]

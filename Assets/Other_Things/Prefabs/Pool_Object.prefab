@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 983442719883945767}
   - component: {fileID: 4819375394784570399}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Pool_Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

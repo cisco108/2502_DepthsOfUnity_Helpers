@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 public class ExampleUsage : MonoBehaviour
 {
     public GameObject[] gameObjects;
-
+    private Dictionary<string, GameObject> objectDictionary;
     [Button("Log to Console")]
     private void TestLoggingToConsole()
     {
@@ -38,8 +39,14 @@ public class ExampleUsage : MonoBehaviour
             Debug.Log(o.Key + "\n" + o.Value);
         }
 
-        GameObject markObject = newDict["momo"];
-        markObject.SetActive(false);
+        objectDictionary = newDict;
+    }
+
+    [Button("Deactivate momo GameObject")]
+    private void DeactivateMomo()
+    {
+        GameObject momoObject = objectDictionary["momo"];
+        momoObject.SetActive(false);
     }
 
     public GameObject jokeMaster;
@@ -56,15 +63,12 @@ public class ExampleUsage : MonoBehaviour
     [Button("Look at Camera")]
     private void TestLookAtCamera()
     {
-       testLookAtCamera.transform.LookAtCamera(); 
+        testLookAtCamera.transform.LookAtCamera();
     }
+
     [Button("Reset Rotation")]
     private void TestResetRotation()
     {
-       testLookAtCamera.transform.ResetRotation(); 
+        testLookAtCamera.transform.ResetRotation();
     }
-
-
-
-
 }

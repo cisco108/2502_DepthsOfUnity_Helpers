@@ -71,4 +71,12 @@ public class ExampleUsage : MonoBehaviour
     {
         testLookAtCamera.transform.ResetRotation();
     }
+    
+    public GameObject testResetChildren;
+
+    [Button("Reset Child")]
+    private void TestResetChildren()
+    {
+        testResetChildren.transform.ResetChildrenTransform(true, true);
+    }
 }

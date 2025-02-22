@@ -61,6 +61,18 @@ public static class ExtensionMethods
         Debug.Log($"Wrote content to: {path}");
     }
 
+    public static void ResetChildrenTransform(this Transform gO, bool resetPos, bool resetRot)
+    {
+        int childCount = gO.childCount;
+
+        for (int i = 0; i < childCount; i++)
+        {
+           gO.GetChild(i).localPosition = Vector3.zero; 
+        }
+        
+    }
+    
+
 
     /////////////////// From the Lectures /////////////////////////////////////
     public static T GetOrAddComponent<T>(this GameObject gameObject) where T : MonoBehaviour

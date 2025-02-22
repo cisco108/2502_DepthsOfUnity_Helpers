@@ -4,7 +4,7 @@
 ![alt text](Assets/Other_Things/Images/1.png)
 *Sample Scene: Here all methods can be tested with button clicks.*
 
-## ExtensionMethods Class Documentation
+## ExtensionMethods Class 
 
 This class contains various extension methods for Unity objects and components. Here's a breakdown of each method:
 
@@ -30,3 +30,29 @@ This class contains various extension methods for Unity objects and components. 
 - **Log** - Logs any object to the Unity console.
 - **WriteToTempFile** - Writes an object's string representation to a temporary file.
 
+
+## Helper Components
+
+### ObjectPoolComponent
+A component that creates an object pool for a given GameObject.
+
+#### Functions:
+
+- **InitPool()**: Initializes the object pool with the specified size and object type.
+- **SpawnObject()**: Retrieves an object from the pool and spawns it at the designated location.
+- **ClearPool()**: Removes all objects from the pool and destroys them.
+
+## ParentingHelper
+A component that parents nearby objects to its transform.
+
+#### Functions:
+
+- **CatchChildren()**: Finds all objects with colliders within a specified radius and makes them children of this transform.
+- **CatchChildrenNonAlloc()**: A non-allocating version of CatchChildren that limits the number of objects that can be parented.
+
+## UI Helpers
+![alt text](Assets/Other_Things/Images/2.png)
+
+- Hierarchy Highlight
+- Info Box, with icon
+- Inspector Buttons

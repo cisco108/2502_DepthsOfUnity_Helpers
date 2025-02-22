@@ -6,6 +6,7 @@ public class ExampleUsage : MonoBehaviour
 {
     public GameObject[] gameObjects;
     private Dictionary<string, GameObject> objectDictionary;
+
     [Button("Log to Console")]
     private void TestLoggingToConsole()
     {
@@ -71,12 +72,20 @@ public class ExampleUsage : MonoBehaviour
     {
         testLookAtCamera.transform.ResetRotation();
     }
-    
-    public GameObject testResetChildren;
 
-    [Button("Reset Child")]
-    private void TestResetChildren()
+    public GameObject resetChildren;
+
+    [Button("Reset Children Position")]
+    private void TestResetChildrenPos()
     {
-        testResetChildren.transform.ResetChildrenTransform(true, true);
+        resetChildren.transform.ResetChildrenTransform();
+    }
+
+    public GameObject resetChildrenPosAndRot;
+
+    [Button("Reset Children Position and rotation")]
+    private void TestResetChildrenPosAndRot()
+    {
+        resetChildrenPosAndRot.transform.ResetChildrenTransform(true);
     }
 }

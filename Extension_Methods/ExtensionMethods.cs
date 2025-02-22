@@ -61,15 +61,25 @@ public static class ExtensionMethods
         Debug.Log($"Wrote content to: {path}");
     }
 
-    public static void ResetChildrenTransform(this Transform gO, bool resetPos, bool resetRot)
+    /// <summary>
+    /// Resets the position to relative 0, the transform of the parent.
+    /// If parameter true, also the rotation is reset.
+    /// </summary>
+    /// <param name="gO"></param>
+    /// <param name="alsoResetRot"></param>
+    public static void ResetChildrenTransform(this Transform gO, bool alsoResetRot = false)
     {
-        int childCount = gO.childCount;
-
-        for (int i = 0; i < childCount; i++)
+        for (int i = 0; i < gO.childCount; i++)
         {
            gO.GetChild(i).localPosition = Vector3.zero; 
         }
+
+        if(!alsoResetRot) return;
         
+        for (int i = 0; i < gO.childCount; i++)
+        {
+            gO.GetChild(i).rotation = Quaternion.identity;
+        }
     }
     
 

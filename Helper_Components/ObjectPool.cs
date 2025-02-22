@@ -7,7 +7,6 @@ public class ObjectPool
     private List<GameObject> _pooledObjects;
     private int _poolsize;
     private GameObject _prefab;
-    private bool _isPoolEmpty = true;
 
     public ObjectPool(GameObject prefab, int poolsize)
     {

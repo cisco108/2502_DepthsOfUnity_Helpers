@@ -1,0 +1,29 @@
+{
+  "version": "0.1.1",
+  "displayName": "250118",
+  "description": "",
+  "unity": "6000.0",
+  "unityRelease": "34f1",
+  "documentationUrl": "https://",
+  "changelogUrl": "https://",
+  "licensesUrl": "",
+  "keywords": [
+    "Unity Package"
+  ],
+  "samples": [
+    {
+      "displayName": "Sample",
+      "description": "This is a sample.",
+      "path": "Samples~/Sample"
+    }
+  ],
+  "author": {
+    "name": "DefaultCompany",
+    "email": "author@mail.com",
+    "url": "https://",
+    "UseSettingsCompanyNameAsName": true
+  },
+  "name": "com.defaultcompany.250118",
+  "dependencies": {},
+  "hideFlags": 0
+}

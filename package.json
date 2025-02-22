@@ -1,6 +1,6 @@
 {
-  "version": "0.1.1",
-  "displayName": "250118",
+  "version": "0.1.2",
+  "displayName": "newhere_utils",
   "description": "",
   "unity": "6000.0",
   "unityRelease": "34f1",
@@ -13,17 +13,17 @@
   "samples": [
     {
       "displayName": "Sample",
-      "description": "This is a sample.",
+      "description": "With the Submission_Sample_Scene everything can be tested.",
       "path": "Samples~/Sample"
     }
   ],
   "author": {
-    "name": "DefaultCompany",
+    "name": "newInChicago",
     "email": "author@mail.com",
     "url": "https://",
     "UseSettingsCompanyNameAsName": true
   },
-  "name": "com.defaultcompany.250118",
+  "name": "com.newinchicago.newhere_utils",
   "dependencies": {},
   "hideFlags": 0
 }

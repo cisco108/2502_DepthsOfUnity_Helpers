@@ -101,3 +101,11 @@ public static class ExtensionMethods
         transform.eulerAngles = new Vector3(0, eulerAngles.y, 0);
     }
 }
+
+public class Response
+{
+    public string icon_url;
+    public string id;
+    public string url;
+    public string value;
+}

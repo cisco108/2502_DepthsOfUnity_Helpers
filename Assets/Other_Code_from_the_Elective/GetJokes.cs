@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.HID;
 using UnityEngine.Networking;
 
-public class Response
+public class Respo
 {
     public string icon_url;
     public string id;
@@ -28,7 +28,7 @@ public class GetJokes : MonoBehaviour
         }
 
         var json = webRequest.downloadHandler.text;
-        var data = JsonUtility.FromJson<Response>(json);
+        var data = JsonUtility.FromJson<Respo>(json);
         return data.value;
     }
 
